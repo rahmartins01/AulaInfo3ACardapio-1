@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../src/globals.css";
 
 export default function App() {
+
+}
     const [listaProdutos, setProdutos] = useState([
 
         {
@@ -58,13 +60,20 @@ export default function App() {
     const adicionarProdutoPedido = (produto) => {  
         setPedidos([...listaPedidos, produto]);
     }
-    const removerItem = (id)=> {
-        let listaAux = listaPedidos.filter((pedidos)=> pedidos.id !== id);
-        setPedidos(listaAux);
-    }
     console.table(listaPedidos);
-
+    const removerItem = (id)=> {
+        let remover = false;
+        let listaAux = listaPedidos.filter((pedido)=> 
+           {
+            if (pedidos.id !== id){
     
+         setPedidos(listaAux);
+
+            }
+        }
+          );
+    
+
     return (
         <div className="bloco-principal" >
             <div className="bloco-produtos">
